@@ -2,6 +2,9 @@ const create = require("./create");
 const findAll = require("./find-all");
 const findById = require("./find-by-id");
 const findBy = require("./find-by");
+var mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://asommer:QAZwsx123@database-server-1-5wzy9.mongodb.net/test?retryWrites=true', {useNewUrlParser: true} );
+
 
 const readline = require('readline').createInterface({
   input: process.stdin,
@@ -62,8 +65,9 @@ function createThing(){
   askForInput();
 }
 function findAllThings(){
-  findAll((data)=>{
+  findAll(()=>{
     //show data
+
     printMenu();
   });
 }
