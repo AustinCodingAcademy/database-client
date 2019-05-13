@@ -1,6 +1,7 @@
+let Person = require("./models/PersonModel");
 
 function findById(id, done){
-    done();
+    Person.findById(id);
 }
 
 
